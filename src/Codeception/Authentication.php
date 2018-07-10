@@ -19,9 +19,12 @@ trait Authentication
 {
 
     /**
+     * Try to login in Auth0 using the configuration in the env file
+     *
+     * If the login succeed the access token will be returned
      * @return string $Id
      */
-    public function authenticate()
+    public function getAccessToken()
     {
 
 
