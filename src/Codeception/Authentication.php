@@ -1,9 +1,13 @@
 <?php
 declare(strict_types=1);
 
+namespace Akmeh\Codeception;
+
 use \Auth0\SDK\API\Authentication as Auth0Authnetication;
 use \Auth0\SDK\Exception\ApiException;
 use \GuzzleHttp\Exception\ClientException;
+
+
 
 /**
  * Trait Authentication
