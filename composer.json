@@ -1,0 +1,26 @@
+{
+  "name": "akmeh/auth0-api-middleware",
+  "description": "Auth0 Api Middleware is a component for Laravel connecting API with Auth0",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Akmeh"
+    }
+  ],
+  "require": {
+    "auth0/auth0-php": "~5.0",
+    "illuminate/cache": "^5.6",
+    "illuminate/http": "^5.6"
+  },
+    "minimum-stability": "stable",
+  "prefer-stable": true,
+
+  "autoload": {
+    "psr-4": {
+      "Akmeh\\": "src/"
+    }
+  }
+}
+
+
+
