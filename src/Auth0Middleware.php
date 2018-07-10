@@ -34,9 +34,13 @@ class Auth0Middleware
 
         try {
             $user = $this->getUser($request);
-            $params = $request->request->all();
-            $params['X-Email'] = $user['email'];
-            $request->request->add($params);
+            if (array_key_exists('email', $user)) {
+                $params = $request->request->all();
+                $params['X-Email'] = $user['email'];
+                $request->request->add($params);
+            }
+
+
         } catch (\Exception $e) {
             return $this->unauthorized($e->getMessage());
         }
@@ -56,13 +60,7 @@ class Auth0Middleware
 
         $authorizationHeader = str_replace('bearer ', '', $request->headers->get('Authorization'));
         $token = str_replace('Bearer ', '', $authorizationHeader);
-        $user = $this->authorize($token);
-
-        if (array_key_exists('email', $user)) {
-            return $user;
-        }
-
-        throw new InvalidTokenException('Email is not in the Access Token');
+        return $this->authorize($token);
 
     }
 
