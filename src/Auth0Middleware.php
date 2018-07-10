@@ -55,7 +55,6 @@ class Auth0Middleware
      */
     private function getUser(Request $request): array
     {
-
         $authorizationHeader = str_replace('bearer ', '', $request->headers->get('Authorization'));
         $token = str_replace('Bearer ', '', $authorizationHeader);
         return $this->authorize($token);
