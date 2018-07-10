@@ -39,8 +39,6 @@ class Auth0Middleware
                 $params['X-Email'] = $user['email'];
                 $request->request->add($params);
             }
-
-
         } catch (\Exception $e) {
             return $this->unauthorized($e->getMessage());
         }
@@ -76,7 +74,7 @@ class Auth0Middleware
         try {
             $verifier = new JWTVerifier([
                 'supported_algs' => ['RS256'],
-                'valid_audiences' => [env('AUTH0_CLIENT_ID')],
+                'valid_audiences' => [env('AUTH0_AUTH_AUDIENCE')],
                 'authorized_iss' => ['https://' . env('AUTH0_DOMAIN') . '/'],
                 'client_secret' => env('AUTH0_CLIENT_SECRET'),
                 'cache' => new Auth0Cache(),
