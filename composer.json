@@ -1,5 +1,5 @@
 {
-  "name": "akmeh/auth0-api-middleware",
+  "name": "akmeh/auth0",
   "description": "Auth0 Api Middleware is a component for Laravel connecting API with Auth0",
   "license": "proprietary",
   "authors": [
