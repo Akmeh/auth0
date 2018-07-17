@@ -36,7 +36,7 @@ trait Authentication
             'client_id' => env('AUTH0_CLIENT_ID'),
 
             // Also required, found in the API settings page.
-            'audience' => env('AUTH0_AUTH_AUDIENCE'),//'https://api.thetripguru.com',
+            'audience' => env('AUTH0_AUTH_AUDIENCE'),
         ];
 
         try {
