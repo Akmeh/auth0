@@ -27,7 +27,6 @@ trait Authentication
     public function getAccessToken()
     {
 
-
         $auth0_api = new Auth0Authnetication(env('AUTH0_DOMAIN'));
 
         $config = [
